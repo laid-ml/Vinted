@@ -8,9 +8,9 @@ const authorized = require("../utils/authorized");
 
 // Données à remplacer avec les vôtres :
 cloudinary.config({
-  cloud_name: "dhze1xjvj",
-  api_key: "849312477857733",
-  api_secret: "BlcE5ZC9cX7WcmU3zSnrsCMjsnI",
+  cloud_name: process.env.CLOUD_NAME,
+  api_key: process.env.CLOUDINARY_APIKEY,
+  api_secret: process.env.CLOUDINARY_API_SECRET,
 });
 
 const convertToBase64 = (file) => {

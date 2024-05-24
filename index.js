@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 app.use(express.json());
 app.use(cors());
-mongoose.connect("mongodb://localhost:27017/vinted");
+mongoose.connect(process.env.MONGODB_URI);
 
 // import de mes routes
 const userRoutes = require("./routes/user");
@@ -17,6 +17,6 @@ app.all("*", (req, res) => {
   res.status(400).json({ message: "vous étes perdu" });
 });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT, () => {
   console.log("server started");
 });
